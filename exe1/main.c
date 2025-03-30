@@ -21,11 +21,11 @@ void adc_1_task(void *p) {
 
 
     while (1) {
-        adc_select_input(); // Select ADC input 1 (GPIO27)
+        adc_select_input(1); // Select ADC input 1 (GPIO27)
         result1 = adc_read();
         printf("voltage 1: %f V\n", result1 * conversion_factor);
 
-        adc_select_input(); // Select ADC input 1 (GPIO27)
+        adc_select_input(0); // Select ADC input 1 (GPIO27)
         result2 = adc_read();
         printf("voltage 2: %f V\n", result2 * conversion_factor);
 
